@@ -4,22 +4,14 @@
 Если же вам нужно только установить пакеты, я добавил скрипт amneziawg-install - он автоматически скачает пакеты из этого репозитория под ваше устройство (только для стабильной версии OpenWRT), а также предложит сразу настроить интерфейс с протоколом AmneziaWG. Если пользователь согласится, нужно будет ввести параметры конфига, которые запросит скрипт. При этом скрипт создаст интерфейс, настроит для него правила фаерволла, а также **включит перенаправление всего траффика через тунель AmneziaWG** (установит в настройках Peer галочку Route Allowed IPs).
 Для запуска скрипта подключитесь к роутеру по SSH, введите команду и следуйте инструкциям на экране:
 ```
-sh <(wget -O - https://raw.githubusercontent.com/Slava-Shchipunov/awg-openwrt/refs/heads/master/amneziawg-install.sh)
+sh <(wget -O - https://raw.githubusercontent.com/kirill190497/awg-openwrt/refs/heads/master/amneziawg-install.sh)
 ```
 
 # Сборка пакетов для всех устройств, поддерживающих OpenWRT
 В репозиторий добавлен скрипт, который парсит данные о поддерживаемых платформах со страницы OpenWRT и автоматически запускает сборку пакетов AmneziaWG для всех устройств.
 На данный момент я собрал пакеты для всех устройств для OpenWRT версий:
-1) [23.05.0](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.0)
-2) [23.05.1](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.1)
-3) [23.05.2](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.2)
-4) [23.05.3](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.3)
-5) [23.05.4](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.4)
-6) [23.05.5](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.5)
+1) [24.10.0-rc2](https://github.com/kirill190497/awg-openwrt/releases/tag/v24.10.0-rc2)
 
-И собрал пакеты для популярных устройств для OpenWRT [SNAPSHOT](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/SNAPSHOT)
-
-Также запускал сборку для версии [22.03.7](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v22.03.7), но там для двух платформ сборка завершилась ошибкой. Так как это достаточно старая версия OpenWRT, я не стал разбираться, в чем проблема.
 
 В дальнейшем при выходе новых релизов OpenWRT будут автоматически создаваться релизы с пакетами AmneziaWG и запускаться сборка пакетов под все устройства, поддерживаемые новой версией. Github action для проверки появления нового релиза запускается автоматически раз в 3 дня, а также может быть запущен вручную.
 
@@ -51,21 +43,13 @@ For automatic configuration, I recommend using the [script](https://github.com/i
 If you only need to install packages, I added the amneziawg-install script - it will automatically download packages from this repository for your device (only for the stable version of OpenWRT), and also offer to immediately configure the interface with the AmneziaWG protocol. If the user agrees, you will need to enter the config parameters that the script will request. The script will create an interface, configure firewall rules for it, and also **enable redirection of all traffic through the AmneziaWG tunnel** (check the Route Allowed IPs box in the Peer settings).
 To run the script, connect to the router via SSH, enter the command and follow the instructions on the screen:
 ```
-sh <(wget -O - https://raw.githubusercontent.com/Slava-Shchipunov/awg-openwrt/refs/heads/master/amneziawg-install.sh)
+sh <(wget -O - https://raw.githubusercontent.com/kirill190497/awg-openwrt/refs/heads/master/amneziawg-install.sh)
 ```
 
 # Building packages for all devices that support OpenWRT
 A script has been added to the repository that parses data on supported platforms from the OpenWRT page and automatically starts building AmneziaWG packages for all devices.
 At the moment I have collected packages for all devices for OpenWRT versions:
-1) [23.05.0](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.0)
-2) [23.05.1](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.1)
-3) [23.05.2](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.2)
-4) [23.05.3](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.3)
-5) [23.05.4](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v23.05.4)
-
-And collected packages for popular devices for OpenWRT [SNAPSHOT](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/SNAPSHOT)
-
-I also ran the build for version [22.03.7](https://github.com/Slava-Shchipunov/awg-openwrt/releases/tag/v22.03.7), but the build ended with an error for two platforms. Since this is a fairly old version of OpenWRT, I did not bother to figure out what the problem was.
+1) [24.10.0-rc2](https://github.com/kirill190497/awg-openwrt/releases/tag/24.10.0-rc2)
 
 In the future, when new OpenWRT releases are released, releases with AmneziaWG packages will be automatically created and the package build will be launched for all devices supported by the new version. Github action for checking for a new release is launched automatically every 3 days, and can also be launched manually.
 
